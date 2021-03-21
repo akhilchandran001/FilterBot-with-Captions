@@ -21,7 +21,8 @@ PM_START_TEXT = """
 
 *Hello {}, My Name is* {} !. 
 
-*I'm Filter Manager Bot Maintained By* [{}](https://t.me/{}). 
+*ഈ ബോട്ട് തികച്ചും @FILM_WORL ഗ്രൂപ്പിലേക്ക് ആണ്. ഞാൻ ആണ് ആ ഗ്രൂപ്പിൽ സിനിമകൾ നൽകുന്നത്*😁
+
 
 """
 
@@ -32,11 +33,6 @@ HELP_STRINGS = """
 
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nഈ പറഞ്ഞിരിക്കുന്ന commandകൾ എല്ലാം  / അല്ലെങ്കിൽ ! വെച്ച് ഉപയോഗിക്കാവുന്നതാണ്...\n")
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for [my creator](t.me/sonoflars) to get me to where I am now, and every donation helps \
-motivate him to make me even better. All the donation money will go to a better VPS to host me, and/or beer \
-(see his bio!). He's just a poor student, so every little helps!
-There are two ways of paying him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -127,13 +123,13 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(DEVIL_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),reply_markup=InlineKeyboardMarkup(
-                                                  [[InlineKeyboardButton(text="♻️Stream Channel",url="https://telegram.dog/Movies_stream"),InlineKeyboardButton(text="📺TV Series Channel",url="https://telegram.dog/TVSeries_FC")],
-                                                [InlineKeyboardButton(text="🎬Film Group",url="https://telegram.dog/filmclublovers"),InlineKeyboardButton(text="💠HEVC Channel",url="https://telegram.dog/FC_HEVC")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
+                                                  [[InlineKeyboardButton(text="⭕Channel⭕",url="https://t.me/joinchat/VtTZc5al3Vt0te9_"),InlineKeyboardButton(text="⭕Series Channel⭕",url="https://t.me/joinchat/R5wnoclbG6Bcgyk8")],
+                                                [InlineKeyboardButton(text="⭕Group⭕",url="https://t.me/FILM_WORL"),InlineKeyboardButton(text="⭕OTT Channel⭕",url="https://t.me/joinchat/Tosat0NY-iQxv80o")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
          
 
         update.effective_message.reply_text("Heya, How can I help you? 🙂",reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="❓ Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text="♻️ Mai Repo",url="https://github.com/jikkubot")]]))
+                                                [[InlineKeyboardButton(text="❓ Help",url="t.me/{}?start=help".format(bot.username)),
                                   
 # for test purposes
 def error_callback(bot, update, error):
